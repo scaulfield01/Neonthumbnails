@@ -3,9 +3,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content:center;
-
-
 }
 .thumb-well{
   padding: 10%;
+
+}
+.thumb-well>img{
+  border: 1px solid gray;
+
+}
+.thumb-well>p{
+    margin-left: 75%;
+    margin-top: -14%;
 }
