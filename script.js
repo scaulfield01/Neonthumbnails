@@ -26,8 +26,9 @@ AjaxThumbNails()
 
   function addThumbnail(thumbUrl){
     $(".thumbnails-container").append(
-      $('<div/>')
+      $("<div/>")
       .addClass("thumb-well")
+      .append($("<img/>").attr('src',thumbUrl))
       )
   };
   function scoreGenerate(){};
