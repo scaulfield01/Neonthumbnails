@@ -6,7 +6,7 @@ var thumbApiUrl="http://jsonplaceholder.typicode.com/photos";
 AjaxThumbNails();
 
 //click event ajax call
-  $('.btn').click(function(){
+  $('.results-button').click(function(){
     AjaxThumbNails()
   });
 
