@@ -29,6 +29,7 @@ AjaxThumbNails()
       $("<div/>")
       .addClass("thumb-well")
       .append($("<img/>").attr('src',thumbUrl))
+      .append($("<p/>").text("32"))
       )
   };
   function scoreGenerate(){};
