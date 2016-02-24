@@ -2,7 +2,7 @@ $( document ).ready(function() {
 
 var thumbApiUrl="http://jsonplaceholder.typicode.com/photos";
 
-AjaxThumbNails()
+AjaxThumbNails();
 
   // ajaxcall(loopappened(append(scoreGenerate)))
 
@@ -17,9 +17,9 @@ AjaxThumbNails()
   }
 
   function loopAddThumbnail(resp){
-    resp = resp;
+   var resp = resp;
     for (var i = 0; i < 6; i++) {
-      thumbnailUrl = resp[i].thumbnailUrl
+     var thumbnailUrl = resp[i].thumbnailUrl;
       addThumbnail(thumbnailUrl)
     };
   };
@@ -29,11 +29,13 @@ AjaxThumbNails()
       $("<div/>")
       .addClass("thumb-well")
       .append($("<img/>").attr('src',thumbUrl))
-      .append($("<p/>").text("32"))
+      .append($("<p/>").text(scoreGenerate()))
       )
   };
-  function scoreGenerate(){};
 
-
+  function scoreGenerate(){
+    var score = Math.floor((Math.random()*100)+ 1);
+    return score
+  };
 
 });
