@@ -11,19 +11,25 @@ AjaxThumbNails()
       url:thumbApiUrl,
       dataType:"JSON",
       type: "Get",
-      success: function(resp){loopAppend(resp)},
+      success: function(resp){loopAddThumbnail(resp)},
       error: function(err){alert('Error: '+ err)}
     });
   }
 
-  function loopAppend(resp){
+  function loopAddThumbnail(resp){
     resp = resp;
     for (var i = 0; i < 6; i++) {
-      console.log(resp[i].thumbnailUrl);
+      thumbnailUrl = resp[i].thumbnailUrl
+      addThumbnail(thumbnailUrl)
     };
   };
 
-  function append(){};
+  function addThumbnail(thumbUrl){
+    $(".thumbnails-container").append(
+      $('<div/>')
+      .addClass("thumb-well")
+      )
+  };
   function scoreGenerate(){};
 
 
