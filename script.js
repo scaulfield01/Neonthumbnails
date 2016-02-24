@@ -1,8 +1,8 @@
 $( document ).ready(function() {
-var stopper = 0
+var arryLocal = 0
 var thumbApiUrl="http://jsonplaceholder.typicode.com/photos";
 
-//load ajax call
+//load ajax call when the page is loaded
 AjaxThumbNails();
 
 //click event ajax call
@@ -11,7 +11,7 @@ AjaxThumbNails();
   });
 
 //methods structure
-// ajaxcall(loopappened(append(scoreGenerate)))
+// ajaxcall(loopAddThumb(AddThumb(scoreGenerate)))
 
   function AjaxThumbNails(){
     $.ajax({
@@ -25,11 +25,11 @@ AjaxThumbNails();
 
   function loopAddThumbnail(resp){
    var resp = resp;
-   var wheretostop = stopper;
-    for (var i = stopper; i < wheretostop + 6 ; i++) {
+   var wheretostop = arryLocal;
+    for (var i = arryLocal; i < wheretostop + 6 ; i++) {
      var thumbnailUrl = resp[i].thumbnailUrl;
       addThumbnail(thumbnailUrl)
-      stopper += 1
+      arryLocal += 1
     };
   };
 
