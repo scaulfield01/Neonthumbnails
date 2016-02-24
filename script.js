@@ -1,14 +1,17 @@
 $( document ).ready(function() {
-
+var stopper = 0
 var thumbApiUrl="http://jsonplaceholder.typicode.com/photos";
 
+//load ajax call
 AjaxThumbNails();
 
+//click event ajax call
   $('.btn').click(function(){
     AjaxThumbNails()
   });
 
-  // ajaxcall(loopappened(append(scoreGenerate)))
+//methods structure
+// ajaxcall(loopappened(append(scoreGenerate)))
 
   function AjaxThumbNails(){
     $.ajax({
@@ -22,9 +25,11 @@ AjaxThumbNails();
 
   function loopAddThumbnail(resp){
    var resp = resp;
-    for (var i = 0; i < 6; i++) {
+   var wheretostop = stopper;
+    for (var i = stopper; i < wheretostop + 6 ; i++) {
      var thumbnailUrl = resp[i].thumbnailUrl;
       addThumbnail(thumbnailUrl)
+      stopper += 1
     };
   };
 
