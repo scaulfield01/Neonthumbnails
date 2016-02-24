@@ -4,6 +4,10 @@ var thumbApiUrl="http://jsonplaceholder.typicode.com/photos";
 
 AjaxThumbNails();
 
+  $('.btn').click(function(){
+    AjaxThumbNails()
+  });
+
   // ajaxcall(loopappened(append(scoreGenerate)))
 
   function AjaxThumbNails(){
