@@ -1,0 +1,28 @@
+
+.thumbnails-container{
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+  flex-wrap: wrap;
+  justify-content:center;
+}
+.result-banner{
+  text-align: center;
+}
+.thumb-well{
+  padding: 10%;
+
+}
+.thumb-well>img{
+  border: 1px solid gray;
+
+}
+.thumb-well>p{
+    margin-left: 75%;
+    margin-top: -14%;
+}
+.results-button{
+  margin-left: 45%
+}
