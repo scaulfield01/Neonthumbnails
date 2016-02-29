@@ -13,7 +13,7 @@
 }
 .thumb-well{
   padding: 10%;
-
+  display: none;
 }
 .thumb-well>img{
   border: 1px solid gray;
