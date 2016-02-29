@@ -1,14 +1,15 @@
 $( document ).ready(function() {
-var arryLocal = 0
+var arryLocal = 1
 var thumbApiUrl="http://jsonplaceholder.typicode.com/photos";
 
 //load ajax call when the page is loaded
 AjaxThumbNails();
-unHideBatch();
+// unHideBatch();
 
 //click event ajax call
   $('.results-button').click(function(){
-    AjaxThumbNails()
+    debugger
+    unHideBatch();
   });
 
 //methods structure
@@ -26,12 +27,10 @@ unHideBatch();
 
   function loopAddThumbnail(resp){
    var resp = resp;
-   // var wheretostop = arryLocal;
     for (var i = 0; i < resp.length ; i++) {
      var thumbnailUrl = resp[i].thumbnailUrl;
      var thumbnailId = resp[i].id;
       addThumbnail(thumbnailUrl,thumbnailId)
-      // arryLocal += 1
     };
     unHideBatch()
   };
@@ -52,9 +51,10 @@ unHideBatch();
 
   function unHideBatch(){
     var wheretostop = arryLocal;
-    for (var i = arryLocal; i <= wheretostop + 6; i++) {
+    for (var i = arryLocal; i <= wheretostop + 5; i++) {
       element = document.getElementById(i);
       $(element).show()
+      arryLocal += 1
     };
 
   }
