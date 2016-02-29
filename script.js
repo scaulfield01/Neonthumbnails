@@ -28,6 +28,7 @@ AjaxThumbNails();
 //click event ajax call
   $('.results-button').click(function(){
     unHideBatch();
+    scrollBottom()
   });
 
   function AjaxThumbNails(){
@@ -51,6 +52,7 @@ AjaxThumbNails();
     };
     spinner.stop(spinner_div);
     unHideBatch()
+    scrollBottom()
   };
 
   function addThumbnail(thumbUrl,thumbId){
@@ -83,5 +85,7 @@ AjaxThumbNails();
     spinner.spin(spinner_div);
     }
   }
-
+  function scrollBottom(){
+    $(document).scrollTop($(document).height());
+  }
 });
