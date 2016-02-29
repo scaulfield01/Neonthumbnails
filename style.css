@@ -12,7 +12,9 @@
   text-align: center;
 }
 .thumb-well{
-  padding: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding
   display: none;
 }
 .thumb-well>img{
@@ -24,7 +26,9 @@
     margin-top: -14%;
 }
 .results-button{
-  margin-left: 45%
+    position:relative;
+    left: 40%;
+    width: 20%;
 }
 .spinner {
   position: fixed;
