@@ -22,13 +22,12 @@ var opts = {
 var spinner = null;
 var spinner_div = 0;
 
-
 AjaxThumbNails();
-
 //click event ajax call
-  $('.results-button').click(function(){
+  $('.results-button').click(function(e){
+    e.preventDefault
     unHideBatch();
-    scrollBottom()
+    scrollBottom();
   });
 
   function AjaxThumbNails(){
@@ -40,9 +39,7 @@ AjaxThumbNails();
       success: function(resp){loopAddThumbnail(resp)},
       error: function(err){alert('Error: '+ err)}
     });
-
   }
-
   function loopAddThumbnail(resp){
    var resp = resp;
     for (var i = 0; i < resp.length ; i++) {
@@ -51,10 +48,9 @@ AjaxThumbNails();
       addThumbnail(thumbnailUrl,thumbnailId)
     };
     spinner.stop(spinner_div);
-    unHideBatch()
-    scrollBottom()
+    unHideBatch();
+    scrollBottom();
   };
-
   function addThumbnail(thumbUrl,thumbId){
     $(".thumbnails-container").append(
       $("<div/>")
@@ -63,12 +59,10 @@ AjaxThumbNails();
       .append($("<p/>").text(scoreGenerate()))
       )
   };
-
   function scoreGenerate(){
     var score = Math.floor((Math.random()*100)+ 1);
     return score
   };
-
   function unHideBatch(){
     var wheretostop = arryLocal;
     for (var i = arryLocal; i <= wheretostop + 5; i++) {
@@ -76,16 +70,12 @@ AjaxThumbNails();
       $(element).show()
       arryLocal += 1
     };
-  }
+  };
   function loadSpinner(){
     spinner_div = $('#spinner').get(0);
-    if(spinner == null) {
-    spinner = new Spinner(opts).spin(spinner_div);
-    } else {
-    spinner.spin(spinner_div);
-    }
-  }
+    spinner == null ? spinner = new Spinner(opts).spin(spinner_div) : spinner.spin(spinner_div);
+  };
   function scrollBottom(){
     $(document).scrollTop($(document).height());
-  }
+  };
 });
